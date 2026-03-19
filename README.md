@@ -15,8 +15,6 @@ I believe that **code, thought, and art are deeply interconnected** — each sha
 
 ## 🧠 Background
 
-* 🎓 Former philosophy student at *St. Thomas Apostolic Seminary, Vadavathoor*
-* 🌍 Advanced German proficiency (Goethe-Zentrum & Goethe-Institut)
 * 💻 Aspiring Software Engineer
 * 🎨 Watercolor artist & creative thinker
 * ♟️ Strategy enthusiast (chess & logic-based systems)
