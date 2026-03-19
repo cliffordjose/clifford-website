@@ -52,9 +52,8 @@ I approach technology not just as a tool, but as a **medium of expression**.
 
 ## 📫 Connect With Me
 
-* GitHub: https://github.com/your-username
-* Portfolio: (your website link here)
-
+* GitHub: https://github.com/cliffordjose/clifford-website
+* Portfolio: https://cliffordjose.github.io/clifford-website/
 ---
 
 ## ⚙️ Status
