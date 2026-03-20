@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -37,6 +37,7 @@ h1 {
   font-family: 'Orbitron', sans-serif;
   font-size: 42px;
   letter-spacing: 5px;
+  line-height: 1.3;
 }
 
 .subtitle {
@@ -79,15 +80,16 @@ h1 {
 .content {
   max-width: 750px;
   padding: 30px;
-  background: rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.07);
   border-radius: 20px;
   backdrop-filter: blur(10px);
-  line-height: 1.8;
+  line-height: 1.9;
 }
 
 .content p {
   margin-bottom: 18px;
   text-align: justify;
+  color: #e6e6e6;
 }
 
 /* ROCKET */
@@ -104,11 +106,11 @@ footer {
   color: #777;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
 
   .main {
-    flex-direction: row; /* KEEP LEFT IMAGE */
+    flex-direction: row;
     gap: 15px;
   }
 
@@ -116,50 +118,37 @@ footer {
     width: 100px;
   }
 
-  .content {
-    padding: 15px;
-    font-size: 14px;
+  /* NAME FIX */
+  h1 {
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    line-height: 1.4;
+    text-align: left;
+    word-break: break-word;
+    word-spacing: 2px;
   }
 
-  h1 {
-    font-size: 22px;
-    letter-spacing: 2px;
-    {
-    word-spacing: 2px;
-}
-
+  /* HEADER FIX */
   header {
     padding: 60px 10px 20px;
+    text-align: left;
   }
-}
-/* FIX NAME */
-h1 {
-  font-size: 20px;
-  letter-spacing: 1.5px;
-  line-height: 1.4;
-  text-align: left;   /* makes it straight */
-  word-break: break-word;
+
+  /* CONTENT FIX */
+  .content {
+    padding: 15px;
+  }
+
+  .content p {
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: left;
+  }
+
 }
 
-/* FIX HEADER ALIGNMENT */
-header {
-  padding: 60px 10px 20px;
-  text-align: left;
-}
-
-/* FIX TEXT VISIBILITY */
-.content {
-  padding: 15px;
-}
-
-/* MAKE PARAGRAPH CLEAR */
-.content p {
-  font-size: 14px;
-  line-height: 1.8;
-  color: #e6e6e6;
-  text-align: left;  /* better for mobile reading */
-}
 </style>
+
 <link rel="icon" href="favicon.ico">
 </head>
 
