@@ -2,12 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Clifford Jose Nediyaparambil</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Rajdhani:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
 
+/* BODY */
 body {
   margin: 0;
   background: #000;
@@ -36,17 +39,18 @@ h1 {
   letter-spacing: 6px;
 }
 
-/* TYPING TEXT */
+/* SUBTITLE */
 .subtitle {
   font-size: 14px;
   color: #00ffff;
   letter-spacing: 3px;
 }
 
-/* GLASS CONTENT */
+/* CONTENT */
 .content {
   max-width: 800px;
-  margin: auto;
+  margin-left: 320px;
+  margin-right: 20px;
   padding: 40px;
   line-height: 1.9;
   font-size: 16px;
@@ -54,6 +58,11 @@ h1 {
   background: rgba(255,255,255,0.05);
   border-radius: 20px;
   backdrop-filter: blur(10px);
+}
+
+.content p {
+  margin-bottom: 18px;
+  text-align: justify;
 }
 
 /* PROFILE */
@@ -64,44 +73,6 @@ h1 {
   transform: translateY(-50%);
 }
 
-/* SCANNING LINE */
-.scan {
-  position: absolute;
-  width: 260px;
-  height: 3px;
-  background: linear-gradient(to right, transparent, cyan, transparent);
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: scanMove 3s linear infinite;
-  z-index: 3;
-}
-
-@keyframes scanMove {
-  0% { top: 0; opacity: 0; }
-  10% { opacity: 1; }
-  50% { top: 100%; opacity: 1; }
-  90% { opacity: 1; }
-  100% { top: 0; opacity: 0; }
-}
-
-/* ENERGY PULSE */
-.profile img {
-  animation: glowPulse 2.5s ease-in-out infinite;
-}
-
-@keyframes glowPulse {
-  0% {
-    box-shadow: 0 0 20px cyan;
-  }
-  50% {
-    box-shadow: 0 0 60px cyan, 0 0 100px rgba(0,255,255,0.6);
-  }
-  100% {
-    box-shadow: 0 0 20px cyan;
-  }
-}
-
 /* IMAGE */
 .profile img {
   width: 240px;
@@ -110,9 +81,34 @@ h1 {
   box-shadow: 0 0 40px cyan;
   position: relative;
   z-index: 2;
+  animation: glowPulse 2.5s ease-in-out infinite;
 }
 
-/* OUTER MACHINE RING */
+/* GLOW */
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 20px cyan; }
+  50% { box-shadow: 0 0 60px cyan, 0 0 100px rgba(0,255,255,0.6); }
+  100% { box-shadow: 0 0 20px cyan; }
+}
+
+/* SCAN */
+.scan {
+  position: absolute;
+  width: 260px;
+  height: 3px;
+  background: linear-gradient(to right, transparent, cyan, transparent);
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scanMove 3s linear infinite;
+}
+
+@keyframes scanMove {
+  0% { top: 0; opacity: 0; }
+  50% { top: 100%; opacity: 1; }
+  100% { top: 0; opacity: 0; }
+}
+
+/* RINGS */
 .profile::before {
   content: "";
   position: absolute;
@@ -126,7 +122,6 @@ h1 {
   animation: rotate 8s linear infinite;
 }
 
-/* INNER MACHINE RING */
 .profile::after {
   content: "";
   position: absolute;
@@ -142,7 +137,6 @@ h1 {
   animation: rotateReverse 5s linear infinite;
 }
 
-/* ROTATIONS */
 @keyframes rotate {
   from { transform: translate(-50%, -50%) rotate(0deg); }
   to { transform: translate(-50%, -50%) rotate(360deg); }
@@ -152,6 +146,7 @@ h1 {
   from { transform: translate(-50%, -50%) rotate(360deg); }
   to { transform: translate(-50%, -50%) rotate(0deg); }
 }
+
 /* ROCKET */
 #rocket {
   position: fixed;
@@ -167,7 +162,6 @@ h1 {
   height: 6px;
   background: cyan;
   border-radius: 50%;
-  pointer-events: none;
   opacity: 0.7;
 }
 
@@ -178,8 +172,54 @@ footer {
   color: #888;
 }
 
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .profile {
+    left: 10px;
+    top: 120px;
+    transform: none;
+  }
+
+  .profile img {
+    width: 120px;
+  }
+
+  .profile::before {
+    width: 160px;
+    height: 160px;
+  }
+
+  .profile::after {
+    width: 140px;
+    height: 140px;
+  }
+
+  .scan {
+    width: 120px;
+  }
+
+  header {
+    margin-left: 150px;
+    padding: 80px 10px 20px;
+    text-align: left;
+  }
+
+  h1 {
+    font-size: 22px;
+    letter-spacing: 2px;
+  }
+
+  .content {
+    margin-left: 150px;
+    margin-right: 10px;
+    padding: 15px;
+    font-size: 13px;
+  }
+}
+
 </style>
-<link rel="icon" href="favicon.ico" type="image/png">
+<link rel="icon" href="favicon.ico">
 </head>
 
 <body>
@@ -192,29 +232,31 @@ footer {
 </header>
 
 <div class="content">
+
 <p>
-Clifford Jose Nediyaparambil is a multidisciplinary individual whose journey spans philosophy, language, art, technology, and literature. Formerly a seminarian and philosophy student, he is now an aspiring software engineer, bringing together analytical thinking, creativity, and intellectual depth.
+Clifford Jose Nediyaparambil is a multidisciplinary individual whose journey spans philosophy, language, art, technology, and literature. Formerly a seminarian and philosophy student, he is now an aspiring software engineer, combining analytical thinking with creativity and intellectual depth.
 </p>
 
 <p>
-He pursued philosophical studies at St. Thomas Apostolic Seminary, Vadavathoor, Kottayam, where he was engaged in academic and spiritual formation. During the course of his philosophy studies, he made a conscious decision to step away from seminary life, choosing a path shaped by broader intellectual, creative, and technological exploration.
+He pursued philosophical studies at St. Thomas Apostolic Seminary, Vadavathoor, Kottayam, where he underwent academic and spiritual formation. During this period, he made a conscious decision to step away from seminary life and explore a broader path shaped by intellectual, creative, and technological interests.
 </p>
 
 <p>
-His academic background includes advanced proficiency in German, having completed A1 to B2 levels at Goethe-Zentrum Trivandrum and C1 level at the Goethe-Institut Mumbai. This linguistic training has strengthened his critical thinking, intercultural awareness, and ability to engage in structured academic discourse.
+He has achieved advanced proficiency in the German language, completing A1 to B2 levels at Goethe-Zentrum Trivandrum and advancing to C1 level at the Goethe-Institut Mumbai, strengthening his communication and intercultural skills.
 </p>
 
 <p>
-Beyond academics, he is actively involved in online chess platforms, reflecting his interest in strategy, discipline, and logical reasoning. He is also an active participant in the international watercolor community. In recognition of his artistic involvement, he serves as a Brand Ambassador for the KUKOYO Camlin Company.
+Beyond academics, he actively engages in chess and is involved in the international watercolor community. He also serves as a Brand Ambassador for KUKOYO Camlin.
 </p>
 
 <p>
-Alongside his academic and creative pursuits, he is currently working on his debut novel, <i>Unread at 2:17 AM</i>, exploring themes of silence, timing, emotional distance, and modern relationships.
+He is currently working on his debut novel, <i>Unread at 2:17 AM</i>, exploring themes of silence, timing, and modern relationships.
 </p>
 
 <p>
 At the core of his work lies the belief that art, thought, and technology are deeply interconnected.
 </p>
+
 </div>
 
 <div class="profile">
@@ -226,7 +268,7 @@ At the core of his work lies the belief that art, thought, and technology are de
 
 <script>
 
-/* TYPING EFFECT */
+/* typing */
 const text = "SYSTEM INITIALIZING...";
 let i = 0;
 function type() {
@@ -238,16 +280,21 @@ function type() {
 }
 type();
 
-/* STARFIELD */
+/* stars */
 const canvas = document.getElementById("stars");
 const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
 
-let stars = [];
-for (let i = 0; i < 200; i++) {
-  stars.push({x: Math.random()*canvas.width, y: Math.random()*canvas.height});
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 }
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
+let stars = Array.from({length: 200}, () => ({
+  x: Math.random()*canvas.width,
+  y: Math.random()*canvas.height
+}));
 
 function drawStars() {
   ctx.clearRect(0,0,canvas.width,canvas.height);
@@ -261,7 +308,7 @@ function drawStars() {
 }
 drawStars();
 
-/* ROCKET FOLLOW + PARTICLES */
+/* rocket */
 const rocket = document.getElementById("rocket");
 
 document.addEventListener("mousemove", (e) => {
