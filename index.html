@@ -177,9 +177,46 @@ footer {
   padding: 60px;
   color: #888;
 }
+/* MOBILE RESPONSIVE FIX */
+@media (max-width: 768px) {
 
+  header {
+    padding-top: 60px;
+  }
+
+  .profile {
+    position: static;        /* REMOVE fixed position */
+    transform: none;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  .profile img {
+    width: 180px;            /* smaller for mobile */
+  }
+
+  .profile::before {
+    width: 220px;
+    height: 220px;
+  }
+
+  .profile::after {
+    width: 190px;
+    height: 190px;
+  }
+
+  .scan {
+    width: 180px;
+  }
+
+  .content {
+    padding: 20px;
+    font-size: 14px;
+  }
+}
 </style>
   <link rel="icon" href="favicon.ico" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
