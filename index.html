@@ -2,15 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Clifford Jose Nediyaparambil</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Rajdhani:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
 
-/* BODY */
 body {
   margin: 0;
   background: #000;
@@ -30,126 +27,159 @@ canvas {
 /* HEADER */
 header {
   text-align: center;
-  padding: 100px 20px 40px;
+  padding: 120px 20px 40px;
 }
 
 h1 {
   font-family: 'Orbitron', sans-serif;
-  font-size: 42px;
-  letter-spacing: 5px;
-  line-height: 1.3;
+  font-size: 46px;
+  letter-spacing: 6px;
 }
 
+/* TYPING TEXT */
 .subtitle {
   font-size: 14px;
-  color: cyan;
+  color: #00ffff;
   letter-spacing: 3px;
 }
 
-/* MAIN LAYOUT */
-.main {
-  display: flex;
-  align-items: flex-start;
-  gap: 40px;
-  max-width: 1200px;
+/* GLASS CONTENT */
+.content {
+  max-width: 800px;
   margin: auto;
-  padding: 20px;
+  padding: 40px;
+  line-height: 1.9;
+  font-size: 16px;
+  color: #ddd;
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
 }
 
 /* PROFILE */
 .profile {
-  position: sticky;
-  top: 100px;
+  position: fixed;
+  top: 50%;
+  left: 40px;
+  transform: translateY(-50%);
 }
 
+/* SCANNING LINE */
+.scan {
+  position: absolute;
+  width: 260px;
+  height: 3px;
+  background: linear-gradient(to right, transparent, cyan, transparent);
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scanMove 3s linear infinite;
+  z-index: 3;
+}
+
+@keyframes scanMove {
+  0% { top: 0; opacity: 0; }
+  10% { opacity: 1; }
+  50% { top: 100%; opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 0; opacity: 0; }
+}
+
+/* ENERGY PULSE */
 .profile img {
-  width: 220px;
+  animation: glowPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 20px cyan;
+  }
+  50% {
+    box-shadow: 0 0 60px cyan, 0 0 100px rgba(0,255,255,0.6);
+  }
+  100% {
+    box-shadow: 0 0 20px cyan;
+  }
+}
+
+/* IMAGE */
+.profile img {
+  width: 240px;
   border-radius: 50%;
-  box-shadow: 0 0 30px cyan;
-  animation: glow 2.5s infinite;
+  border: 2px solid #222;
+  box-shadow: 0 0 40px cyan;
+  position: relative;
+  z-index: 2;
 }
 
-/* GLOW */
-@keyframes glow {
-  0% { box-shadow: 0 0 20px cyan; }
-  50% { box-shadow: 0 0 60px cyan; }
-  100% { box-shadow: 0 0 20px cyan; }
+/* OUTER MACHINE RING */
+.profile::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 2px dashed rgba(0,255,255,0.4);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate 8s linear infinite;
 }
 
-/* CONTENT */
-.content {
-  max-width: 750px;
-  padding: 30px;
-  background: rgba(255,255,255,0.07);
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  line-height: 1.9;
+/* INNER MACHINE RING */
+.profile::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  border: 2px solid rgba(0,255,255,0.2);
+  border-top: 2px solid cyan;
+  border-bottom: 2px solid cyan;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotateReverse 5s linear infinite;
 }
 
-.content p {
-  margin-bottom: 18px;
-  text-align: justify;
-  color: #e6e6e6;
+/* ROTATIONS */
+@keyframes rotate {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
+@keyframes rotateReverse {
+  from { transform: translate(-50%, -50%) rotate(360deg); }
+  to { transform: translate(-50%, -50%) rotate(0deg); }
+}
 /* ROCKET */
 #rocket {
   position: fixed;
-  font-size: 28px;
+  font-size: 30px;
   pointer-events: none;
+  z-index: 9999;
+}
+
+/* PARTICLES */
+.particle {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: cyan;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.7;
 }
 
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 50px;
-  color: #777;
-}
-
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
-
-  .main {
-    flex-direction: row;
-    gap: 15px;
-  }
-
-  .profile img {
-    width: 100px;
-  }
-
-  /* NAME FIX */
-  h1 {
-    font-size: 20px;
-    letter-spacing: 1.5px;
-    line-height: 1.4;
-    text-align: left;
-    word-break: break-word;
-    word-spacing: 2px;
-  }
-
-  /* HEADER FIX */
-  header {
-    padding: 60px 10px 20px;
-    text-align: left;
-  }
-
-  /* CONTENT FIX */
-  .content {
-    padding: 15px;
-  }
-
-  .content p {
-    font-size: 14px;
-    line-height: 1.8;
-    text-align: left;
-  }
-
+  padding: 60px;
+  color: #888;
 }
 
 </style>
-
-<link rel="icon" href="favicon.ico">
+<link rel="icon" href="favicon.png" type="image/png">
 </head>
 
 <body>
@@ -161,43 +191,42 @@ footer {
   <div class="subtitle" id="typing"></div>
 </header>
 
-<div class="main">
+<div class="content">
+<p>
+Clifford Jose Nediyaparambil is a multidisciplinary individual whose journey spans philosophy, language, art, technology, and literature. Formerly a seminarian and philosophy student, he is now an aspiring software engineer, bringing together analytical thinking, creativity, and intellectual depth.
+</p>
 
-  <div class="profile">
-    <img src="profile.jpg" alt="profile">
-  </div>
+<p>
+He pursued philosophical studies at St. Thomas Apostolic Seminary, Vadavathoor, Kottayam, where he was engaged in academic and spiritual formation. During the course of his philosophy studies, he made a conscious decision to step away from seminary life, choosing a path shaped by broader intellectual, creative, and technological exploration.
+</p>
 
-  <div class="content">
+<p>
+His academic background includes advanced proficiency in German, having completed A1 to B2 levels at Goethe-Zentrum Trivandrum and C1 level at the Goethe-Institut Mumbai. This linguistic training has strengthened his critical thinking, intercultural awareness, and ability to engage in structured academic discourse.
+</p>
 
-    <p>
-    Clifford Jose Nediyaparambil is a multidisciplinary individual whose journey spans philosophy, language, art, technology, and literature. Formerly a seminarian and philosophy student, he is now an aspiring software engineer combining analytical thinking with creativity.
-    </p>
+<p>
+Beyond academics, he is actively involved in online chess platforms, reflecting his interest in strategy, discipline, and logical reasoning. He is also an active participant in the international watercolor community. In recognition of his artistic involvement, he serves as a Brand Ambassador for the KUKOYO Camlin Company.
+</p>
 
-    <p>
-    He pursued philosophical studies at St. Thomas Apostolic Seminary, Kottayam, and later chose a broader intellectual and technological path.
-    </p>
+<p>
+Alongside his academic and creative pursuits, he is currently working on his debut novel, <i>Unread at 2:17 AM</i>, exploring themes of silence, timing, emotional distance, and modern relationships.
+</p>
 
-    <p>
-    He has completed A1–B2 German at Goethe-Zentrum Trivandrum and C1 training at Goethe-Institut Mumbai, strengthening his communication and global perspective.
-    </p>
+<p>
+At the core of his work lies the belief that art, thought, and technology are deeply interconnected.
+</p>
+</div>
 
-    <p>
-    He is active in chess, watercolor art, and serves as a Brand Ambassador for KUKOYO Camlin.
-    </p>
-
-    <p>
-    He is currently writing his debut novel <i>Unread at 2:17 AM</i>, exploring modern emotional themes.
-    </p>
-
-  </div>
-
+<div class="profile">
+  <div class="scan"></div>
+  <img src="profile.jpg">
 </div>
 
 <div id="rocket">🚀</div>
 
 <script>
 
-/* typing */
+/* TYPING EFFECT */
 const text = "SYSTEM INITIALIZING...";
 let i = 0;
 function type() {
@@ -209,39 +238,43 @@ function type() {
 }
 type();
 
-/* stars */
+/* STARFIELD */
 const canvas = document.getElementById("stars");
 const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-function resize() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+let stars = [];
+for (let i = 0; i < 200; i++) {
+  stars.push({x: Math.random()*canvas.width, y: Math.random()*canvas.height});
 }
-resize();
-window.addEventListener("resize", resize);
 
-let stars = Array.from({length: 150}, () => ({
-  x: Math.random()*canvas.width,
-  y: Math.random()*canvas.height
-}));
-
-function draw() {
+function drawStars() {
   ctx.clearRect(0,0,canvas.width,canvas.height);
   ctx.fillStyle = "white";
   stars.forEach(s => {
     ctx.fillRect(s.x, s.y, 2, 2);
-    s.y += 0.4;
+    s.y += 0.5;
     if (s.y > canvas.height) s.y = 0;
   });
-  requestAnimationFrame(draw);
+  requestAnimationFrame(drawStars);
 }
-draw();
+drawStars();
 
-/* rocket */
-document.addEventListener("mousemove", e => {
-  const r = document.getElementById("rocket");
-  r.style.left = e.clientX + "px";
-  r.style.top = e.clientY + "px";
+/* ROCKET FOLLOW + PARTICLES */
+const rocket = document.getElementById("rocket");
+
+document.addEventListener("mousemove", (e) => {
+  rocket.style.left = e.clientX + "px";
+  rocket.style.top = e.clientY + "px";
+
+  let p = document.createElement("div");
+  p.className = "particle";
+  p.style.left = e.clientX + "px";
+  p.style.top = e.clientY + "px";
+  document.body.appendChild(p);
+
+  setTimeout(() => p.remove(), 500);
 });
 
 </script>
