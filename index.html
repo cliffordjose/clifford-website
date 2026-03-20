@@ -177,39 +177,36 @@ footer {
   padding: 60px;
   color: #888;
 }
-/* MOBILE RESPONSIVE FIX */
-@media (max-width: 768px) {
-
-  header {
-    padding-top: 60px;
-  }
+/* Push text away from the fixed image */
+.content {
+  margin-left: 320px; /* space for image */
+}
+  @media (max-width: 768px) {
 
   .profile {
-    position: static;        /* REMOVE fixed position */
-    transform: none;
-    margin: 20px auto;
-    text-align: center;
+    left: 10px; /* move slightly inward */
   }
 
   .profile img {
-    width: 180px;            /* smaller for mobile */
+    width: 140px; /* smaller image */
   }
 
   .profile::before {
-    width: 220px;
-    height: 220px;
+    width: 180px;
+    height: 180px;
   }
 
   .profile::after {
-    width: 190px;
-    height: 190px;
+    width: 150px;
+    height: 150px;
   }
 
   .scan {
-    width: 180px;
+    width: 140px;
   }
 
   .content {
+    margin-left: 170px; /* adjust space for smaller image */
     padding: 20px;
     font-size: 14px;
   }
