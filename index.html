@@ -177,7 +177,37 @@ footer {
   padding: 60px;
   color: #888;
 }
+@media (max-width: 768px) {
 
+  /* Make header a flex row */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 40px 10px 20px;
+    text-align: left;
+  }
+
+  /* Make image small */
+  .profile {
+    position: static;   /* remove fixed only on mobile */
+    transform: none;
+  }
+
+  .profile img {
+    width: 50px;        /* small image */
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  /* Move image into header visually */
+  .profile {
+    order: -1;
+  }
+
+}
 </style>
 <link rel="icon" href="favicon.png" type="image/png">
 </head>
@@ -187,8 +217,14 @@ footer {
 <canvas id="stars"></canvas>
 
 <header>
-  <h1>CLIFFORD JOSE NEDIYAPARAMBIL</h1>
-  <div class="subtitle" id="typing"></div>
+  <div class="profile">
+    <img src="profile.jpg">
+  </div>
+
+  <div>
+    <h1>CLIFFORD JOSE NEDIYAPARAMBIL</h1>
+    <div class="subtitle" id="typing"></div>
+  </div>
 </header>
 
 <div class="content">
