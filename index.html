@@ -1,318 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Clifford Jose Nediyaparambil</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Rajdhani:wght@400;500&display=swap" rel="stylesheet">
-
-<style>
-
-body {
-  margin: 0;
-  background: #000;
-  color: #fff;
-  font-family: 'Rajdhani', sans-serif;
-  overflow-x: hidden;
-}
-
-/* STAR BACKGROUND */
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -2;
-}
-
-/* HEADER */
-header {
-  text-align: center;
-  padding: 120px 20px 40px;
-}
-
-h1 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 46px;
-  letter-spacing: 6px;
-}
-
-/* TYPING TEXT */
-.subtitle {
-  font-size: 14px;
-  color: #00ffff;
-  letter-spacing: 3px;
-}
-
-/* GLASS CONTENT */
-.content {
-  max-width: 800px;
-  margin: auto;
-  padding: 40px;
-  line-height: 1.9;
-  font-size: 16px;
-  color: #ddd;
-  background: rgba(255,255,255,0.05);
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-}
-
-/* PROFILE */
-.profile {
-  position: fixed;
-  top: 50%;
-  left: 40px;
-  transform: translateY(-50%);
-}
-
-/* SCANNING LINE */
-.scan {
-  position: absolute;
-  width: 260px;
-  height: 3px;
-  background: linear-gradient(to right, transparent, cyan, transparent);
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: scanMove 3s linear infinite;
-  z-index: 3;
-}
-
-@keyframes scanMove {
-  0% { top: 0; opacity: 0; }
-  10% { opacity: 1; }
-  50% { top: 100%; opacity: 1; }
-  90% { opacity: 1; }
-  100% { top: 0; opacity: 0; }
-}
-
-/* ENERGY PULSE */
-.profile img {
-  animation: glowPulse 2.5s ease-in-out infinite;
-}
-
-@keyframes glowPulse {
-  0% {
-    box-shadow: 0 0 20px cyan;
-  }
-  50% {
-    box-shadow: 0 0 60px cyan, 0 0 100px rgba(0,255,255,0.6);
-  }
-  100% {
-    box-shadow: 0 0 20px cyan;
-  }
-}
-
-/* IMAGE */
-.profile img {
-  width: 240px;
-  border-radius: 50%;
-  border: 2px solid #222;
-  box-shadow: 0 0 40px cyan;
-  position: relative;
-  z-index: 2;
-}
-
-/* OUTER MACHINE RING */
-.profile::before {
-  content: "";
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  border: 2px dashed rgba(0,255,255,0.4);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: rotate 8s linear infinite;
-}
-
-/* INNER MACHINE RING */
-.profile::after {
-  content: "";
-  position: absolute;
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  border: 2px solid rgba(0,255,255,0.2);
-  border-top: 2px solid cyan;
-  border-bottom: 2px solid cyan;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: rotateReverse 5s linear infinite;
-}
-
-/* ROTATIONS */
-@keyframes rotate {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-@keyframes rotateReverse {
-  from { transform: translate(-50%, -50%) rotate(360deg); }
-  to { transform: translate(-50%, -50%) rotate(0deg); }
-}
-/* ROCKET */
-#rocket {
-  position: fixed;
-  font-size: 30px;
-  pointer-events: none;
-  z-index: 9999;
-}
-
-/* PARTICLES */
-.particle {
-  position: fixed;
-  width: 6px;
-  height: 6px;
-  background: cyan;
-  border-radius: 50%;
-  pointer-events: none;
-  opacity: 0.7;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 60px;
-  color: #888;
-}
-@media (max-width: 768px) {
-
-  /* Make header a flex row */
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 10px;
-    padding: 40px 10px 20px;
-    text-align: left;
-  }
-
-  /* Make image small */
-  .profile {
-    position: static;   /* remove fixed only on mobile */
-    transform: none;
-  }
-
-  .profile img {
-    width: 50px;        /* small image */
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-
-  /* Move image into header visually */
-  .profile {
-    order: -1;
-  }
-
-}
-</style>
-<link rel="icon" href="favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clifford Jose Nediyaparambil - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="#" class="logo">CJN.</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#writings">Interests</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<canvas id="stars"></canvas>
+    <main>
+        <section class="hero hidden">
+            <div class="hero-content">
+                <span class="greeting">Hello, I'm</span>
+                <h1 class="glitch-text">Clifford Jose Nediyaparambil</h1>
+                <h2 class="roles">
+                    <span class="role">Computer Science</span>
+                    <span class="dot">•</span>
+                    <span class="role">Philosophy</span>
+                    <span class="dot">•</span>
+                    <span class="role">Art</span>
+                </h2>
+                <p class="hero-desc">BCA Graduate • Aspiring Master's Student in Germany • Writer & Developer</p>
+                <div class="hero-cta">
+                    <a href="#writings" class="btn btn-primary">Explore My Mind</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <div class="hero-image-glow"></div>
+                <img src="profile.jpeg" alt="Clifford Jose Nediyaparambil" class="hero-image">
+            </div>
+        </section>
 
-<header>
-  <div class="profile">
-    <img src="profile.jpg">
-  </div>
+        <section id="about" class="about hidden">
+            <h2 class="section-title">Background & Vision</h2>
+            <div class="glass-card about-card">
+                <div class="about-text">
+                    <p>I am a recent BCA graduate with a passion for software development, driven by a deep curiosity about the intersection of technology, human thought, and artistic expression. My journey is not just about writing code, but understanding the philosophical implications of the systems we build.</p>
+                    <p>My near-term objective is to pursue a Master's degree in Germany, immersing myself in a technically rigorous and culturally rich environment to further refine my skills and worldview.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <span class="stat-val">BCA</span>
+                        <span class="stat-lbl">Completed</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-val">GER</span>
+                        <span class="stat-lbl">Targeting MS</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-val">3+</span>
+                        <span class="stat-lbl">Disciplines</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <div>
-    <h1>CLIFFORD JOSE NEDIYAPARAMBIL</h1>
-    <div class="subtitle" id="typing"></div>
-  </div>
-</header>
+        <section id="writings" class="writings hidden">
+            <h2 class="section-title">Fields of Thought</h2>
+            <div class="cards-grid">
+                <div class="glass-card field-card">
+                    <div class="card-icon cs-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    </div>
+                    <h3>Computer Science</h3>
+                    <p>Exploring algorithms, software architecture, and the future of computing. I build robust systems with an emphasis on elegant design and optimal performance.</p>
+                </div>
+                
+                <div class="glass-card field-card">
+                    <div class="card-icon phil-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                    </div>
+                    <h3>Philosophy</h3>
+                    <p>Delving into epistemology, ethics in AI, and existentialism. I write to untangle complex ideas and understand the human condition in a digital age.</p>
+                </div>
+                
+                <div class="glass-card field-card">
+                    <div class="card-icon art-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c5.523 0 10 4.477 10 10a10 10 0 0 1-19.995.324L2 12a10 10 0 0 1 10-10zm0 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-3 8a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm6 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"></path></svg>
+                    </div>
+                    <h3>Art</h3>
+                    <p>Appreciating and analyzing aesthetics. My technical work is heavily influenced by artistic principles ensuring functional beauty in every project.</p>
+                </div>
+            </div>
+        </section>
 
-<div class="content">
-<p>
-Clifford Jose Nediyaparambil is a multidisciplinary individual whose journey spans philosophy, language, art, technology, and literature. Formerly a seminarian and philosophy student, he is now an aspiring software engineer, bringing together analytical thinking, creativity, and intellectual depth.
-</p>
+        <section id="contact" class="contact hidden">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="glass-card contact-card">
+                <p>I am always open to discussing new projects, exchanging ideas on philosophy, or exploring Master's opportunities in Germany.</p>
+                <a href="mailto:clifford.nediyaparambil@example.com" class="btn btn-primary contact-btn">Send an Email</a>
+            </div>
+        </section>
+    </main>
 
-<p>
-He pursued philosophical studies at St. Thomas Apostolic Seminary, Vadavathoor, Kottayam, where he was engaged in academic and spiritual formation. During the course of his philosophy studies, he made a conscious decision to step away from seminary life, choosing a path shaped by broader intellectual, creative, and technological exploration.
-</p>
+    <footer>
+        <p>&copy; 2026 Clifford Jose Nediyaparambil. Designed with purpose and passion.</p>
+    </footer>
 
-<p>
-His academic background includes advanced proficiency in German, having completed A1 to B2 levels at Goethe-Zentrum Trivandrum and C1 level at the Goethe-Institut Mumbai. This linguistic training has strengthened his critical thinking, intercultural awareness, and ability to engage in structured academic discourse.
-</p>
-
-<p>
-Beyond academics, he is actively involved in online chess platforms, reflecting his interest in strategy, discipline, and logical reasoning. He is also an active participant in the international watercolor community. In recognition of his artistic involvement, he serves as a Brand Ambassador for the KUKOYO Camlin Company.
-</p>
-
-<p>
-Alongside his academic and creative pursuits, he is currently working on his debut novel, <i>Unread at 2:17 AM</i>, exploring themes of silence, timing, emotional distance, and modern relationships.
-</p>
-
-<p>
-At the core of his work lies the belief that art, thought, and technology are deeply interconnected.
-</p>
-</div>
-
-<div id="rocket">🚀</div>
-
-<script>
-
-/* TYPING EFFECT */
-const text = "SYSTEM INITIALIZING...";
-let i = 0;
-function type() {
-  if (i < text.length) {
-    document.getElementById("typing").innerHTML += text.charAt(i);
-    i++;
-    setTimeout(type, 50);
-  }
-}
-type();
-
-/* STARFIELD */
-const canvas = document.getElementById("stars");
-const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let stars = [];
-for (let i = 0; i < 200; i++) {
-  stars.push({x: Math.random()*canvas.width, y: Math.random()*canvas.height});
-}
-
-function drawStars() {
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  ctx.fillStyle = "white";
-  stars.forEach(s => {
-    ctx.fillRect(s.x, s.y, 2, 2);
-    s.y += 0.5;
-    if (s.y > canvas.height) s.y = 0;
-  });
-  requestAnimationFrame(drawStars);
-}
-drawStars();
-
-/* ROCKET FOLLOW + PARTICLES */
-const rocket = document.getElementById("rocket");
-
-document.addEventListener("mousemove", (e) => {
-  rocket.style.left = e.clientX + "px";
-  rocket.style.top = e.clientY + "px";
-
-  let p = document.createElement("div");
-  p.className = "particle";
-  p.style.left = e.clientX + "px";
-  p.style.top = e.clientY + "px";
-  document.body.appendChild(p);
-
-  setTimeout(() => p.remove(), 500);
-});
-
-</script>
-
-<footer>
-© 2026 Clifford Jose Nediyaparambil
-</footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
