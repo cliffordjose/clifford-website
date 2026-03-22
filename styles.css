@@ -332,35 +332,69 @@ section {
     background: rgba(255, 255, 255, 0.04);
 }
 
-/* About Section */
-.about-card {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    gap: 5rem;
-    align-items: center;
-}
-
-.about-text p {
-    font-size: 1.15rem;
-    margin-bottom: 1.8rem;
-    color: var(--text-muted);
-}
-
-.about-text p:last-child {
-    margin-bottom: 0;
-}
-
-.about-stats {
+/* Stack Cards Section */
+.stack-container {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
-    border-left: 1px solid var(--glass-border);
-    padding-left: 4rem;
+    gap: 2rem;
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+.stack-card {
+    position: sticky;
+    top: 120px;
+    margin-bottom: 2rem;
+    padding: 5rem 3rem;
+    text-align: center;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.4);
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+}
+
+.card-1 {
+    top: 100px;
+    z-index: 10;
+}
+
+.card-2 {
+    top: 120px;
+    z-index: 20;
+}
+
+.card-3 {
+    top: 140px;
+    z-index: 30;
+}
+
+.slide-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.slide-content h3 {
+    font-size: 2.2rem;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, var(--accent-1), var(--accent-2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.slide-content p {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
 }
 
 .stat {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
+    margin-top: 1rem;
 }
 
 .stat-val {
@@ -542,18 +576,8 @@ footer {
     .hero h1 {
         font-size: clamp(3rem, 8vw, 4rem);
     }
-    .about-card {
-        grid-template-columns: 1fr;
-        gap: 4rem;
-    }
-    .about-stats {
-        flex-direction: row;
-        border-left: none;
-        border-top: 1px solid var(--glass-border);
-        padding-left: 0;
-        padding-top: 3rem;
-        justify-content: space-around;
-        gap: 1rem;
+    .stack-card {
+        padding: 4rem 1.5rem;
     }
 }
 
@@ -578,10 +602,6 @@ footer {
 }
 
 @media (max-width: 500px) {
-    .about-stats {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 2.5rem;
-    }
+    .slide-content h3 { font-size: 1.5rem; }
+    .slide-content p { font-size: 1.1rem; }
 }
