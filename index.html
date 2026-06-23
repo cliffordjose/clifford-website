@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Clifford Jose — Software Engineer based in Bocholt, Germany. Building elegant solutions with Python and modern technologies.">
+  <meta name="keywords" content="Clifford Jose, Software Engineer, Python Developer, Bocholt, Germany">
+  <meta name="author" content="Clifford Jose">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Clifford Jose — Software Engineer">
+  <meta property="og:description" content="Software Engineer based in Bocholt, Germany. Building elegant solutions with Python and modern technologies.">
+  <meta property="og:type" content="website">
+
+  <title>Clifford Jose — Software Engineer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+
+  <!-- Loading Screen -->
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <div class="loader-name">CJN</div>
+      <div class="loader-bar">
+        <div class="loader-bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#hero" class="nav-logo">
+        CJN<span>.</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="nav-link active" data-section="hero">home</a></li>
+        <li><a href="#expertise" class="nav-link" data-section="expertise">expertise</a></li>
+        <li><a href="#projects" class="nav-link" data-section="projects">dialectica</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">contact</a></li>
+      </ul>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="section">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <div class="aurora-bg">
+      <div class="aurora-blob aurora-blob-1"></div>
+      <div class="aurora-blob aurora-blob-2"></div>
+      <div class="aurora-blob aurora-blob-3"></div>
+    </div>
+
+    <div class="container">
+      <div class="hero-content">
+        <!-- Curved Arrow -->
+        <div class="hero-arrow reveal reveal-delay-3">
+          <svg viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10,80 Q 80,10 180,60" stroke="var(--accent-primary)" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="8 8"/>
+            <path d="M160,40 L185,63 L155,75" stroke="var(--accent-primary)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="hero-text">
+          <p class="hero-greeting reveal">Hello, I'm</p>
+          <h1 class="hero-name reveal reveal-delay-1">
+            Clifford<br><span class="gradient-text">Jose Nediyaparambil</span>
+          </h1>
+          <h2 class="hero-title reveal reveal-delay-2">Software Engineer</h2>
+          <p class="hero-bio reveal reveal-delay-3">
+            <span id="typedText"></span><span class="typed-cursor">|</span>
+          </p>
+
+          <div class="hero-location reveal reveal-delay-4">
+            <span class="dot"></span>
+            Bocholt, Germany
+          </div>
+        </div>
+
+        <div class="hero-photo-wrapper reveal-right">
+          <div class="hero-photo-container">
+            <div class="hero-photo-glow"></div>
+            <img src="assets\Clifford Jose.jpeg" alt="CliSfford Jose" class="hero-photo" id="heroPhoto">
+            <div class="hero-photo-decoration"></div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Expertise Section -->
+  <section id="expertise" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">What I Do</p>
+        <h2 class="section-title">My Expertise</h2>
+        <p class="section-subtitle">Focused on building clean, scalable solutions with modern technologies and best practices.</p>
+      </div>
+
+      <div class="expertise-grid">
+        <!-- Card 1 -->
+        <div class="expertise-card reveal reveal-delay-1">
+          <div class="expertise-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="14" y1="4" x2="10" y2="20"/></svg>
+          </div>
+          <p class="expertise-card-number">01</p>
+          <h3 class="expertise-card-title">Software Engineering</h3>
+          <p class="expertise-card-desc">Building robust, scalable applications with Python and modern development practices. From concept to deployment, crafting clean and efficient code.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="expertise-card reveal reveal-delay-2">
+          <div class="expertise-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <p class="expertise-card-number">02</p>
+          <h3 class="expertise-card-title">Backend Development</h3>
+          <p class="expertise-card-desc">Designing and building server-side architectures, APIs, and data pipelines with Python — ensuring performance, reliability, and scalability at every layer.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="expertise-card reveal reveal-delay-3">
+          <div class="expertise-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <p class="expertise-card-number">03</p>
+          <h3 class="expertise-card-title">Problem Solving & Automation</h3>
+          <p class="expertise-card-desc">Turning complex challenges into elegant automated solutions. From scripting workflows to building intelligent tools that save time and eliminate errors.</p>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <!-- Dialectica Section -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Featured Creation</p>
+        <h2 class="section-title">Dialectica</h2>
+      </div>
+
+      <div class="projects-featured reveal">
+        <div class="featured-card">
+          <div class="featured-image">
+            <div class="featured-image-overlay">
+              <div class="sphere-container">
+                <div class="sphere">
+                  <div class="ring"></div>
+                  <div class="ring"></div>
+                  <div class="ring"></div>
+                  <div class="ring"></div>
+                  <div class="ring"></div>
+                  <div class="ring"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="featured-info">
+            <h3 class="featured-title">DIALECTICA</h3>
+            <p class="featured-desc">
+              An immersive, hardcore deep-dive into the abyssal thoughts of masters like Kant, Nietzsche, and Hegel. This project analyzes the absolute limits of human epistemology and existentialism, built with a stark, brutalist UI designed entirely in pure code.
+            </p>
+            <div class="featured-tags">
+              <span class="tag">Philosophy</span>
+              <span class="tag">Epistemology</span>
+              <span class="tag">Existentialism</span>
+              <span class="tag">Brutalist UI</span>
+            </div>
+            <a href="philosophers/index.html" class="project-link-btn" style="padding: 12px 24px; background: var(--accent-gradient); color: #fff; border-radius: 8px; text-decoration: none; display: inline-flex; width: max-content; margin-top: 24px;">
+              Enter The Void
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="contact-content">
+        <div class="section-header reveal" style="text-align: center;">
+          <p class="section-label" style="justify-content: center;">Get In Touch</p>
+          <h2 class="section-title">Let's Work Together</h2>
+        </div>
+
+        <p class="contact-intro reveal">
+          Whether you have a project idea, need a software engineer, or just want to say hello — my inbox is always open. Let's create something great together.
+        </p>
+
+        <div style="display: flex; justify-content: center; width: 100%; margin-top: 24px;">
+          <a href="mailto:cliffordjose100@gmail.com" class="btn btn-primary reveal">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Drop Me a Line
+          </a>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p class="footer-text">© <span id="currentYear">2026</span> Clifford Jose. Built with <span>♥</span> in Germany.</p>
+        <div class="footer-links">
+          <a href="#hero" class="footer-link">Home</a>
+          <a href="#expertise" class="footer-link">Expertise</a>
+          <a href="#projects" class="footer-link">Dialectica</a>
+          <a href="#contact" class="footer-link">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
