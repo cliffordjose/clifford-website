@@ -1452,11 +1452,16 @@ ul {
   .featured-image {
     min-height: 280px;
   }
+
+  .hero-content {
+    padding: 0 8px;
+  }
 }
 
 @media (max-width: 768px) {
   :root {
     --section-padding: 80px 0;
+    --container-padding: 0 16px;
   }
 
   .nav-links {
@@ -1515,6 +1520,64 @@ ul {
 
   .timeline-header {
     flex-direction: column;
+  }
+
+  /* Dialectica section mobile fixes */
+  .featured-card {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-info {
+    padding: 24px 20px;
+  }
+
+  .featured-image {
+    min-height: 240px;
+  }
+
+  .featured-title {
+    font-size: 1.4rem;
+  }
+
+  .featured-desc {
+    font-size: 0.9rem;
+  }
+
+  /* Fix hero content alignment on phones */
+  .hero-content {
+    text-align: center;
+    padding: 0;
+  }
+
+  .hero-text {
+    order: 2;
+    max-width: 100%;
+  }
+
+  .hero-photo-wrapper {
+    order: 1;
+  }
+
+  .hero-greeting {
+    justify-content: center;
+  }
+
+  .hero-location {
+    justify-content: center;
+  }
+
+  /* Fix section headers */
+  .section-label {
+    justify-content: flex-start;
+  }
+
+  /* Expertise grid stack */
+  .expertise-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .expertise-card {
+    padding: 28px 20px;
   }
 }
 

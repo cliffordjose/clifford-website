@@ -403,9 +403,11 @@ footer {
 @media (max-width: 1024px) {
     .philosopher-block, .philosopher-block.reverse {
         grid-template-columns: 1fr;
+        direction: ltr;
     }
     .ph-content {
         border-right: none;
+        border-left: none;
         border-bottom: 1px solid var(--line);
     }
     .reverse .ph-content {
@@ -413,5 +415,153 @@ footer {
     }
     .ph-image-placer {
         min-height: 400px;
+    }
+    .top-nav {
+        padding: 1.5rem 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Nav */
+    .top-nav {
+        padding: 1.2rem 1.2rem;
+        flex-wrap: nowrap;
+        gap: 12px;
+    }
+
+    .back-link {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+        white-space: nowrap;
+    }
+
+    .brand {
+        font-size: 0.95rem;
+        letter-spacing: 3px;
+    }
+
+    /* Hero */
+    .hero-title {
+        font-size: clamp(2.8rem, 12vw, 5rem);
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+        padding: 0 0.5rem;
+    }
+
+    /* Philosopher blocks */
+    .philosopher-block, .philosopher-block.reverse {
+        grid-template-columns: 1fr;
+        direction: ltr;
+    }
+
+    .ph-content {
+        padding: 3rem 1.5rem;
+        border-right: none;
+        border-left: none;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .reverse .ph-content {
+        border-left: none;
+    }
+
+    .ph-meta {
+        margin-bottom: 2rem;
+    }
+
+    .ph-name {
+        font-size: 2.4rem;
+    }
+
+    .ph-quote {
+        margin-bottom: 2rem;
+    }
+
+    blockquote {
+        font-size: 1.3rem;
+        padding-left: 1.2rem;
+        line-height: 1.5;
+    }
+
+    .ph-image-placer {
+        min-height: 260px;
+        padding: 2rem;
+    }
+
+    .ph-analysis h3 {
+        font-size: 1rem;
+    }
+
+    .ph-analysis p {
+        font-size: 0.95rem;
+    }
+
+    .core-concepts {
+        padding: 1.2rem;
+    }
+
+    .concept h4 {
+        font-size: 1.1rem;
+    }
+
+    /* Abstract shapes - scale down */
+    .kant-shape   { width: 180px; height: 180px; }
+    .nietz-shape  { width: 120px; height: 240px; }
+    .hegel-shape  { width: 160px; height: 160px; }
+    .schopenhauer-shape { width: 160px; height: 160px; }
+    .dostoevsky-shape { width: 130px; height: 200px; }
+    .tolstoy-shape { width: 160px; height: 160px; }
+    .kafka-shape  { width: 120px; height: 120px; }
+    .sartre-shape { width: 150px; height: 150px; }
+    .camus-shape  { width: 140px; height: 140px; }
+    .kierkegaard-shape { width: 140px; height: 140px; }
+    .heidegger-shape { width: 140px; height: 140px; }
+
+    footer {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-nav {
+        padding: 1rem;
+    }
+
+    .back-link {
+        font-size: 0.7rem;
+        letter-spacing: 0.5px;
+    }
+
+    .brand {
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-title {
+        font-size: clamp(2.2rem, 14vw, 3.5rem);
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .ph-content {
+        padding: 2.5rem 1rem;
+    }
+
+    .ph-name {
+        font-size: 2rem;
+    }
+
+    blockquote {
+        font-size: 1.1rem;
+        padding-left: 1rem;
+    }
+
+    .ph-image-placer {
+        min-height: 200px;
+        padding: 1.5rem;
     }
 }
